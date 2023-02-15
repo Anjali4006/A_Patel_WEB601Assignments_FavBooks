@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\A_Patel_FavBooks",
+    "\\A_Patel_FavBooks\\src",
+    "\\A_Patel_FavBooks\\src\\app",
+    "\\A_Patel_FavBooks\\src\\app\\content-card",
+    "\\A_Patel_FavBooks\\src\\app\\helper-files"
   ],
-  "SelectedNode": "\\C:\\Users\\hp1001\\Source\\Repos\\Anjali4006\\A_Patel_WEB601Assignments_FavBooks",
   "PreviewInSolutionExplorer": false
 }
