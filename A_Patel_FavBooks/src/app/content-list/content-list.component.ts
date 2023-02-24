@@ -62,7 +62,7 @@ export class ContentListComponent {
         description: 'A book to explore the world of love ',
         creator: 'Ira Trivedi',
         imgURL: 'http://prodimage.images-bn.com/pimages/9780143063889_p0_v1_s1200x630.jpg',
-        type: 'Rom-Com',
+        type: '',
         tags: ['Tag 1.1', 'Tag 1.2'],
       },
       {
@@ -86,23 +86,20 @@ export class ContentListComponent {
     ];
   }
 
+  searchTerm = '';
+  searchResults: Content[] = [];
+  searchExists = false;
 
-
- 
-}
-const searchTerm = '';
-searchResults: Content[] = [];
-const searchExists = false;
-
-checkExistence()
-{
-  /*
-  if (this.searchTerm.trim() === '')
-  {
-    this.searchExists = false;
-    return;
+  checkExistence() {
+    /*
+    if (this.searchTerm.trim() === '')
+    {
+      this.searchExists = false;
+      return;
+    }
+    */
+    this.searchResults = this.contentArray.filter(item => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.searchExists = this.searchResults.length > 0;
   }
-  */
-  this.searchResults = this.contentArray.filter((item: { title: string; }) => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
-  this.searchExists = this.searchResults.length > 0;
+ 
 }

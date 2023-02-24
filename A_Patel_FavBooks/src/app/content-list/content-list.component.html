@@ -5,12 +5,11 @@
 <!--Assignment 3-->
 
 <h1 style="padding: 20px; margin: 20px; background-color: lavenderblush; color: darkblue;">
-  Search Form 
+  Search Form
 
 
   <br />
   <br />
-
 
   <!--<form>
     <input type="text" [(ngModel)]="searchItem" placeholder="Enter Title:" />
@@ -23,36 +22,35 @@
     <button (click)="checkExistence()"> Search </button>
     <!--<p *ngIf="searchTerm && searchResults.length === 0" class="search-message red">No results found.</p>-->
     <p *ngIf="(searchResults.length === 0 || searchResults.length < 0)" class="search-message red" style="color: red; font-weight: bold; font-size: 30px;">No results found.</p>
-    <p *ngIf="searchTerm && searchResults.length > 0" class="search-message green" style="color: green; font-weight: bold; font-size: 30px;">A content item with this title exists.</p>
+    <p *ngIf="searchTerm && searchResults.length > 0" class="search-message green" style="color:lightblue; font-weight:300; font-size: 30px;">This title already exists</p>
   </div>
 
   <ul>
     <li *ngFor="let item of searchResults">{{ item.title }}</li>
   </ul>
+
+
+
+  <br />
+  <br />
+  <br />
+  <br />
 </h1>
 
-
-<br />
-<br />
-<hr />
-<br />
-<br />
-
-
-<h1 style="padding: 20px; margin: 20px; background-color: antiquewhite; color: darkblue;"> Type : No Type </h1>
+<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> No Type </h1>
 
 <ul>
-  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif;"
+  <li style="list-style-type: none; font-family:'Global Monospace'"
       *ngFor="let content of contentArray | contentList: ''">
 
-    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: antiquewhite; color: darkmagenta; margin-bottom: 50px; ">
+    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
+      text-align: center; background-color:lavender; color:midnightblue; margin-bottom: 50px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
       </h1>
       <div class="content-card-body">
-        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
+        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
         <p><strong>Type:</strong> {{ content.type }}</p>
@@ -70,25 +68,23 @@
 
 <br />
 <br />
-<hr />
-<br />
 <br />
 
 
-<h1 style="padding: 20px; margin: 20px; background-color: burlywood; color: darkblue; "> Type : IOS </h1>
+<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> Fiction </h1>
 
 <ul>
-  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
-      *ngFor="let content of contentArray | contentList: 'ios'">
+  <li style="list-style-type: none; font-family:'Global Monospace'"
+      *ngFor="let content of contentArray | contentList: 'Fiction'">
 
-    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: burlywood; color: darkmagenta; margin-bottom: 50px; ">
+    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
+      text-align: center; background-color:lavenderblush; color:midnightblue; margin-bottom: 50px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
       </h1>
       <div class="content-card-body">
-        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
+        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
         <p><strong>Type:</strong> {{ content.type }}</p>
@@ -106,25 +102,23 @@
 
 <br />
 <br />
-<hr />
-<br />
 <br />
 
 
-<h1 style="padding: 20px; margin: 20px; background-color: darksalmon; color: darkblue; "> Type: Android </h1>
+<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> Autobiography </h1>
 
 <ul>
-  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
-      *ngFor="let content of contentArray | contentList: 'android'">
+  <li style="list-style-type: none; font-family:'Global Monospace'"
+      *ngFor="let content of contentArray | contentList: 'Autobiography'">
 
-    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: darksalmon; color: darkmagenta; margin-bottom: 50px; ">
+    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
+      text-align: center; background-color:lavenderblush; color:midnightblue; margin-bottom: 50px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
       </h1>
       <div class="content-card-body">
-        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
+        <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
         <p><strong>Type:</strong> {{ content.type }}</p>
@@ -138,6 +132,7 @@
 
   </li>
 </ul>
+
 
 
 
