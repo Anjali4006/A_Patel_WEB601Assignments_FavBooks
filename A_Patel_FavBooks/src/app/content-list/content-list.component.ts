@@ -35,7 +35,7 @@ export class ContentListComponent {
         description: 'A novel on a indian girl.',
         creator: 'Chetan Bhagat',
         imgURL: 'https://i.pinimg.com/originals/9b/43/45/9b434584b9ece9a15b2f11b1f1560885.png',
-        type: 'Fiction',
+        type: '',
         tags: ['Tag 1.1', 'Tag 1.2'],
       },
       {
@@ -89,4 +89,20 @@ export class ContentListComponent {
 
 
  
+}
+const searchTerm = '';
+searchResults: Content[] = [];
+const searchExists = false;
+
+checkExistence()
+{
+  /*
+  if (this.searchTerm.trim() === '')
+  {
+    this.searchExists = false;
+    return;
+  }
+  */
+  this.searchResults = this.contentArray.filter((item: { title: string; }) => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+  this.searchExists = this.searchResults.length > 0;
 }
