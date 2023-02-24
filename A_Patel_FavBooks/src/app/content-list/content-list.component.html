@@ -4,47 +4,31 @@
 
 <!--Assignment 3-->
 
-<h1 style="padding: 20px; margin: 20px; background-color: lavenderblush; color: darkblue;">
-  Search Form
-
-
+<h1 style="background-color:aliceblue; color:darkslategrey; font-family:'Century Gothic'">
+  Search Form </h1>
   <br />
   <br />
-
-  <!--<form>
-    <input type="text" [(ngModel)]="searchItem" placeholder="Enter Title:" />
-    <button (click)="searchArray()"> Search </button>
-  </form>-->
-
-  <div>
+ <div>
     <input type="text" [(ngModel)]="searchTerm" placeholder="Search by title">
     &nbsp;
     <button (click)="checkExistence()"> Search </button>
     <!--<p *ngIf="searchTerm && searchResults.length === 0" class="search-message red">No results found.</p>-->
-    <p *ngIf="(searchResults.length === 0 || searchResults.length < 0)" class="search-message red" style="color: red; font-weight: bold; font-size: 30px;">No results found.</p>
+    <p *ngIf="(searchResults.length === 0 || searchResults.length < 0)" class="search-message red" style="color:darkred; font-weight: bold; font-size: 38px;">No results found.</p>
     <p *ngIf="searchTerm && searchResults.length > 0" class="search-message green" style="color:lightblue; font-weight:300; font-size: 30px;">This title already exists</p>
   </div>
-
   <ul>
     <li *ngFor="let item of searchResults">{{ item.title }}</li>
   </ul>
 
 
-
-  <br />
-  <br />
-  <br />
-  <br />
-</h1>
-
-<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> No Type </h1>
+<h1 style="margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> No Type </h1>
 
 <ul>
-  <li style="list-style-type: none; font-family:'Global Monospace'"
+  <li style="list-style-type:square; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
       *ngFor="let content of contentArray | contentList: ''">
 
-    <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
-      text-align: center; background-color:lavender; color:midnightblue; margin-bottom: 50px; ">
+    <div class="content-card" style="width: 40%;margin: 10px;
+      text-align:center; background-color:lavender; color:darkred; margin-bottom: 30px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
@@ -71,14 +55,14 @@
 <br />
 
 
-<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> Fiction </h1>
+<h1 style=" margin: 20px; background-color:plum; color:midnightblue; font-family:'Bookman Old Style'"> Fiction </h1>
 
 <ul>
-  <li style="list-style-type: none; font-family:'Global Monospace'"
+  <li style="list-style-type:square; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
       *ngFor="let content of contentArray | contentList: 'Fiction'">
 
     <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
-      text-align: center; background-color:lavenderblush; color:midnightblue; margin-bottom: 50px; ">
+      text-align: center; background-color:lavenderblush; color:crimson; margin-bottom: 30px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
@@ -105,14 +89,14 @@
 <br />
 
 
-<h1 style="padding: 20px; margin: 20px; background-color:plum; color:midnightblue;"> Autobiography </h1>
+<h1 style=" margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> Autobiography </h1>
 
 <ul>
   <li style="list-style-type: none; font-family:'Global Monospace'"
       *ngFor="let content of contentArray | contentList: 'Autobiography'">
 
     <div class="content-card" style="width: 40%; padding: 10px; margin: 10px;
-      text-align: center; background-color:lavenderblush; color:midnightblue; margin-bottom: 50px; ">
+      text-align: center; background-color:lightsteelblue; color:darkslategray; margin-bottom: 30px; ">
 
       <h1 class="content-card-header">
         {{content.title}}
