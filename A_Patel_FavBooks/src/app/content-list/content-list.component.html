@@ -21,7 +21,7 @@
   </ul>
 
 
-<h1 style="margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> No Type </h1>
+<h1 appHoverAffect="underline" style="margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> No Type </h1>
 
 <ul>
   <li style="list-style-type:square; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
@@ -37,10 +37,10 @@
         <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
-        <p><strong>Type:</strong> {{ content.type }}</p>
+        <p appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
         <p>
           <strong>Tags:</strong>
-          <span>{{ content.tags }}</span>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
         </p>
       </div>
 
@@ -55,7 +55,7 @@
 <br />
 
 
-<h1 style=" margin: 20px; background-color:plum; color:midnightblue; font-family:'Bookman Old Style'"> Fiction </h1>
+<h1 appHoverAffect="underline" style=" margin: 20px; background-color:plum; color:midnightblue; font-family:'Bookman Old Style'"> Fiction </h1>
 
 <ul>
   <li style="list-style-type:square; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
@@ -71,10 +71,10 @@
         <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
-        <p><strong>Type:</strong> {{ content.type }}</p>
+        <p appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
         <p>
           <strong>Tags:</strong>
-          <span>{{ content.tags }}</span>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
         </p>
       </div>
 
@@ -89,7 +89,7 @@
 <br />
 
 
-<h1 style=" margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> Autobiography </h1>
+<h1 appHoverAffect="underline" style=" margin: 20px; background-color: plum; color: midnightblue; font-family: 'Bookman Old Style'"> Autobiography </h1>
 
 <ul>
   <li style="list-style-type: none; font-family:'Global Monospace'"
@@ -105,10 +105,10 @@
         <p><img src="{{ content.imgURL }}" alt="content image" style="width: 55%;" /></p>
         <p style="font-size:20px">{{ content.description }}</p>
         <p><strong>Creator:</strong> {{ content.creator }}</p>
-        <p><strong>Type:</strong> {{ content.type }}</p>
+        <p appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
         <p>
           <strong>Tags:</strong>
-          <span>{{ content.tags }}</span>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
         </p>
       </div>
 
