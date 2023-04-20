@@ -1,4 +1,151 @@
-<p>content-list works!</p>
+<!--
+  ASSIGNMENT_2
+
+  <p>content-list works!</p>
+
+<p>Cars List</p>-->
+<!--<div>
+  <ul>
+    <li *ngFor="let item of contentArray">{{item.title}} <br /> {{item.imgURL}}</li>
+  </ul>
+</div>-->
+<!--<div *ngFor="let content of contentArray | contentType:'SUV'">
+  {{ content.title }} is {{ content.type }}
+</div>
+
+<div *ngFor="let content of contentArray; let i = index"
+     class="content-card" style="width: 40%; padding: 10px; margin: 10px; text-align:center"
+     [ngStyle]="{ border: i == 0 ? '2px solid black' : '1px solid gray' }">
+  <header class="content-card-header">
+    {{ content.title }}
+  </header>-->
+<!--
+  <div (click)="console.log(content.id + ' - ' + content.title)">
+  <img [src]="content.imageURL" alt="content image" />
+</div>
+-->
+<!--<div class="content-card-body">
+  <p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%" /></p>-->
+<!--<p>{{ content.imgURL }}</p>-->
+<!--<p style="font-size:10px">{{ content.description }}</p>
+    <p><strong>Creator:</strong> {{ content.creator }}</p>
+    <p><strong>Type:</strong> {{ content.type }}</p>
+    <p>
+      <strong>Tags:</strong>
+      <span *ngFor="let tag of content.tags">{{ content.tags }}</span>
+    </p>
+  </div>
+</div>-->
+<!--
+<app-create-content (onCreation)="addContent($event)"></app-create-content>
+
+
+
+
+
+<h1 style="padding: 20px; margin: 20px; background-color:cornsilk; color: darkblue; border-radius: 200px; text-align:center"> List of Books </h1>
+
+<h1 style="padding: 20px; margin: 20px; background-color:cornsilk; color: darkblue; border-radius: 200px; text-align:center">
+  Search Form
+
+  <br />
+
+  <div>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by title">
+    &nbsp;
+    <button (click)="checkExistence()"> Search </button>
+    <!--<p *ngIf="searchTerm && searchResults.length === 0" class="search-message red">No results found.</p>
+<p *ngIf="(searchResults.length === 0 || searchResults.length < 0)" class="search-message red" style="color: red; font-weight: bold; font-size: 25px;">Results not found.</p>
+<p *ngIf="searchTerm && searchResults.length > 0" class="search-message green" style="color: green; font-weight: bold; font-size: 25px;">A content item with this title exists.</p>
+  </div>
+
+<ul>
+  <li style="list-style-type: none;" *ngFor="let item of searchResults">{{ item.title }}</li>
+</ul>
+</h1>
+
+
+<h3 style="font-size: 40px; text-align: center; background-color: antiquewhite; color: darkblue; padding: 10px; border-radius:5px" appHoverAffect="underline">---Books With No Type---</h3>
+
+<ul>
+  <li style="list-style-type: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 15%" *ngFor="let content of contentArray | contentType">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; text-align: center; background-color: darkcyan; color: lightcyan; border-radius: 200px">
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 100px">
+        <ng-template #defaultImage>
+          <img [src]="'https://www.vmtlib.michlibrary.org/images/library-books.jpg/image_view_fullscreen'" alt="default image" style="width: 70%; border-radius: 100px">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p appHoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<h3 style="font-size: 40px; text-align: center; background-color: antiquewhite; color: darkblue; padding: 10px; border-radius:5px" appHoverAffect="underline">---Fiction---</h3>
+<ul>
+  <li style="list-style-type: none; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-left: 15%" *ngFor="let content of contentArray | contentType: 'SUV'">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; text-align: center; background-color:darkmagenta; color:antiquewhite; border-radius: 200px">
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 100px">
+        <ng-template #defaultImage>
+          <img [src]="'https://www.vmtlib.michlibrary.org/images/library-books.jpg/image_view_fullscreen'" alt="default image" style="width: 70%; border-radius: 100px">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p appHoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<h3 style="font-size: 40px; text-align: center; background-color: antiquewhite; color: darkblue; padding: 10px; border-radius:5px" appHoverAffect="underline">---Autobiography---</h3>
+<ul>
+  <li style="list-style-type: none; margin-left: 15%" *ngFor="let content of contentArray | contentType:'Fiction'">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; text-align: center; background-color: darkblue; color: lightblue; border-radius: 200px;">
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 100px">
+        <ng-template #defaultImage>
+          <img [src]="'https://www.vmtlib.michlibrary.org/images/library-books.jpg/image_view_fullscreen'" alt="default image" style="width: 70%; border-radius: 100px">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p appHoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+  -->
+
+
+
+
+
 
 <main>
   <app-create-content (addBookEvent)="addNewBook($event)"></app-create-content>
@@ -10,7 +157,7 @@
     </div>
 
     <div *ngIf="titleFound !== null">
-      <p [style.color]="titleFound ? 'green' : 'crimson'">
+      <p [style.color]="titleFound ? 'red' : 'crimson'">
         {{titleFound ? 'Book Found' : 'Book not found'}}
       </p>
     </div>
@@ -21,36 +168,49 @@
   <section class="cards">
     <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType" appHoverAffect="border">
 
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 70%">
+        <ng-template #defaultImage>
+          <img [src]="'https://www.vmtlib.michlibrary.org/images/library-books.jpg/image_view_fullscreen'" alt="default image" style="width: 70%">
+        </ng-template>
 
-      <h2>{{content.title}}</h2>
-      <p>{{content.description}}</p>
-      <p><strong>Creator:</strong> {{content.creator}}</p>
-      <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
-      <p *ngIf="content.tags">
-        <strong>Tags:</strong>
-        <span *ngFor="let tag of content.tags" appHoverAffect="bold">
-          {{tag}},
-        </span>
-      </p>
+        <h2>{{content.title}}</h2>
+        <p>{{content.description}}</p>
+        <p><strong>Creator:</strong> {{content.creator}}</p>
+        <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
+        <p *ngIf="content.tags">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">
+            {{tag}},
+          </span>
+        </p>
+      </div>
     </div>
-  </section>
+</section>
 
   <h1>Fiction</h1>
   <section class="cards">
     <div *ngFor="let content of contents | contentType:'Fiction'" [id]="content.id" class="card fiction" appHoverAffect="border">
 
-      <h2>{{content.title}}</h2>
-      <p>{{content.description}}</p>
-      <p><strong>Creator:</strong> {{content.creator}}</p>
-      <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
-      <p *ngIf="content.tags">
-        <strong>Tags:</strong>
-        <span *ngFor="let tag of content.tags" appHoverAffect="bold">
-          {{tag}},
-        </span>
-      </p>
-    </div>
-  </section>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 70% ">
+        <ng-template #defaultImage>
+          <img [src]="'https://www.vmtlib.michlibrary.org/images/library-books.jpg/image_view_fullscreen'" alt="default image" style="width: 70%">
+        </ng-template>
+
+        <h2>{{content.title}}</h2>
+        <p>{{content.description}}</p>
+        <p><strong>Creator:</strong> {{content.creator}}</p>
+        <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
+        <p *ngIf="content.tags">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">
+            {{tag}},
+          </span>
+        </p>
+      </div>
+      </div>
+</section>
 
   <h1>Autobiography</h1>
   <section class="cards">
@@ -69,3 +229,5 @@
     </div>
   </section>
 </main>
+
+

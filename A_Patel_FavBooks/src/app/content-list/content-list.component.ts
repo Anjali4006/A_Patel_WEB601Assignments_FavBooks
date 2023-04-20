@@ -6,11 +6,15 @@ import { Content } from '../helper-files/content-interface';
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
+
 export class ContentListComponent {
   contents: Content[];
   searchTitle: string = "";
   titleFound: boolean | null = null;
-  defaultBike: string = '/assets/images/drawBike.jpg'
+  defaultBook: string = 'di.png'
+    contentArray: any;
+    title: any;
+    errTxt: boolean | undefined;
 
 
   constructor() {
@@ -20,16 +24,16 @@ export class ContentListComponent {
         title: "How to win friends and Influence people",
         description: "A book of personality developement",
         creator: "Dale Craniege",
-        imgURL: "https://content2.kawasaki.com/ContentStorage/CKM/Products/5016/ba433ac4-0669-47e4-a7f4-735c91bb0362.jpg?w=510&h=340&mode=crop",
+        imgURL: "https://thepoint.gm/assets/Featured-Articles/How-to-win-friends.jpg",
         type: "Autobiography",
         tags: ["Tag 1.1"]
       },
       {
         id: 1,
-        title: "The love Hypnosis",
+        title: "The love Hypothesis",
         description: "The book of love",
         creator: "Ali Hazelwood",
-        imgURL: "https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2023/4dc57ed5-4a65-4963-a2d6-afd571510f59.png",
+        imgURL: "https://i.pinimg.com/originals/52/8a/ec/528aecd18c377b59d5ea0121b37e27c4.png",
         type: "Fiction",
         tags: ["Tag 1.1"]
       },
@@ -37,8 +41,8 @@ export class ContentListComponent {
         id: 2,
         title: "One Indian Girl",
         description: "The story of an independent woman to find love.",
-        creator: "Chetan Bhagta",
-        imgURL: "https://content2.kawasaki.com/ContentStorage/CKM/ProductTrimGroup/31/cbcb96d1-4e57-4563-9ccf-0b3ce735ca38.jpg?w=750",
+        creator: "Chetan Bhagat",
+        imgURL: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/One_Indian_Girl.jpg/220px-One_Indian_Girl.jpg",
         tags: ["Tag1.1"]
       },
       {
@@ -46,6 +50,7 @@ export class ContentListComponent {
         title: "Steev Jobs",
         description: "Life Story of Steev Jobs",
         creator: "Walter Issacon",
+        imgURL:"https://kbimages1-a.akamaihd.net/caee148f-5805-45bd-9cbf-938f2373b8d8/353/569/90/False/steve-jobs-the-life-lessons-rules-for-success.jpg",
         type: "Autobiography"
       },
       {
@@ -53,14 +58,14 @@ export class ContentListComponent {
         title: "The Great Indian Love story",
         description:"Love story you will never forget",
         creator: "Ira Trivedi",
-        imgURL: "https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2018/07/Panigale-V4-.jpg?q=50&fit=crop&w=750&dpr=1.5",
+        imgURL: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/516lu0z4PbL.jpg",
       },
       {
         id: 5,
         title: "The story of my experiments with truth",
         description: "Life story of Mahatama Gandhi",
         creator: "Mahatama Gandhi",
-        imgURL: "https://www.suzuki.ca/wp-content/uploads/DIA1.jpg",
+        imgURL: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81zcPB7uMNL.jpg",
         type:"Autobiography",
       },
       {
