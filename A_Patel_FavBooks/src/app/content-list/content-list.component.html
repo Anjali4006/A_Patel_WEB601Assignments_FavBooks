@@ -1,0 +1,71 @@
+<p>content-list works!</p>
+
+<main>
+  <app-create-content (addBookEvent)="addNewBook($event)"></app-create-content>
+
+  <section class="searchForTitle">
+    <div>
+      <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+      <button (click)="searchByTitle()">Search</button>
+    </div>
+
+    <div *ngIf="titleFound !== null">
+      <p [style.color]="titleFound ? 'green' : 'crimson'">
+        {{titleFound ? 'Book Found' : 'Book not found'}}
+      </p>
+    </div>
+  </section>
+
+
+  <h1>Books with no type</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType" appHoverAffect="border">
+
+
+      <h2>{{content.title}}</h2>
+      <p>{{content.description}}</p>
+      <p><strong>Creator:</strong> {{content.creator}}</p>
+      <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
+      <p *ngIf="content.tags">
+        <strong>Tags:</strong>
+        <span *ngFor="let tag of content.tags" appHoverAffect="bold">
+          {{tag}},
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <h1>Fiction</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType:'Fiction'" [id]="content.id" class="card fiction" appHoverAffect="border">
+
+      <h2>{{content.title}}</h2>
+      <p>{{content.description}}</p>
+      <p><strong>Creator:</strong> {{content.creator}}</p>
+      <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
+      <p *ngIf="content.tags">
+        <strong>Tags:</strong>
+        <span *ngFor="let tag of content.tags" appHoverAffect="bold">
+          {{tag}},
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <h1>Autobiography</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType:'Autobiography'" [id]="content.id" class="card autobiography" appHoverAffect="border">
+
+      <h2>{{content.title}}</h2>
+      <p>{{content.description}}</p>
+      <p><strong>Creator:</strong> {{content.creator}}</p>
+      <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
+      <p *ngIf="content.tags">
+        <strong>Tags:</strong>
+        <span *ngFor="let tag of content.tags" appHoverAffect="bold">
+          {{tag}},
+        </span>
+      </p>
+    </div>
+  </section>
+</main>
