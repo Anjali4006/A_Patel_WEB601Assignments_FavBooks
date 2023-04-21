@@ -1,0 +1,100 @@
+main {
+
+  & > h1 {
+    margin-top: 15px;
+    text-align: center;
+    background-color:lightblue;
+    font-style:italic;
+  }
+
+  .searchForTitle {
+    text-align: center;
+    margin-bottom: 50px;
+
+    div {
+      margin: 12px 0px;
+
+    }
+
+    input {
+      width: 220px;
+      padding: 8px 15px;
+      border: 1px solid black;
+    }
+
+    button {
+      color:darkgray;
+      cursor: pointer;
+      padding: 8px 15px;
+      transition: all .3s;
+      border: 1px solid black;
+      background-color:grey;
+
+      &:hover {
+        color: #000;
+        background-color:darkgrey;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+
+.cards {
+  min-width: 80%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.card {
+  padding: 15px;
+  width: 400px;
+  margin-bottom: 15px;
+  border: 1px solid gray;
+  transition: all .5s;
+
+  &.noContentType {
+    color:darkslateblue;
+    background-color:aliceblue;
+  }
+
+  &.fiction {
+    color:palevioletred;
+    background-color:lavenderblush;
+  }
+
+  &.autobiography {
+    color:teal;
+    background-color:lightgrey;
+  }
+
+  &.matched {
+    border: 5px solid teal;
+    box-shadow: 1px 1px 30px #00fa9a;
+  }
+
+
+  img {
+    width: 50%;
+    height:50%;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 10px 0px;
+    text-align: justify;
+    font-family:'Book Antiqua'
+  }
+}
+
+.card.hoverBorder {
+  border: 2px solid green;
+}
