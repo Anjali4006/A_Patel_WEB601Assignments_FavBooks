@@ -9,6 +9,10 @@ import { Content } from '../helper-files/content-interface';
 export class ContentCardComponent {
   @Input() book: any;
   @Input() class: string = '';
-  //defaultBook: string = '/assets/images/drawBike.jpg';
+  //defaultBike: string = '/assets/images/drawBike.jpg';
+
+  handleClick(content: Content) {
+    console.log(`ID: ${content.id}, Title: ${content.title}`);
+  }
 
 }

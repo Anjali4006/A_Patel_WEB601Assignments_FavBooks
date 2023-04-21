@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Content } from './helper-files/content-interface';
+import { MessageService } from './services/message.service';
+import { FavBookService } from './services/fav-book.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +12,7 @@ export class AppComponent {
   bookId: number = 8;
   oneBookById: any = {};
 
-  constructor(private FavBookService:  FavBookService) { }
+  constructor( private FavBookService: FavBookService) { }
 
   ngOnInit() {
     this.findBookById();
