@@ -10,6 +10,7 @@ import { MessageService } from './message.service';
 })
 export class FavBookService {
   getBooks: any;
+    addBook: any;
 
   constructor(private MessageService: MessageService) { }
 

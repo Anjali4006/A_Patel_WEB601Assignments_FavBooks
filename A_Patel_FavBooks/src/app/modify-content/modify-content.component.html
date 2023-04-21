@@ -1,0 +1,36 @@
+<section class="newBook-Section">
+  <div>
+    <h2>Add New Book</h2>
+    <form class="newBookForm" (submit)="addNewBook()">
+
+      <div>
+        <label for="title">Title:</label> {{newBook.title}}
+        <input type="text" id="title" name="title" [(ngModel)]="newBook.title">
+      </div>
+
+      <div>
+        <label for="desc">Description:</label> {{newBook.description}}
+        <textarea name="description" id="desc" cols="30" rows="4" [(ngModel)]="newBook.description"></textarea>
+      </div>
+
+      <div>
+        <label for="creator">Creator:</label> {{newBook.creator}}
+        <input type="text" id="creator" name="creator" [(ngModel)]="newBook.creator">
+      </div>
+
+      <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" [(ngModel)]="newBook.type">
+      </div>
+
+      <div>
+        <label for="img">Image Url:</label>
+        <input type="text" id="img" name="img" [(ngModel)]="newBook.imgURL">
+      </div>
+
+      <div class="addBtn">
+        <button type="submit">Add Book</button>
+      </div>
+    </form>
+  </div>
+</section>

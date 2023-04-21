@@ -22,6 +22,14 @@ export class ContentListComponent {
     this.FavBookService.getBooks().subscribe((books: Content[]) => this.contents = books);
   }
 
+  addNewBook(newBook: Content) {
+    this.FavBookService.addBook(newBook).subscribe((newBookFromServer: Content) => {
+      this.contents.push(newBookFromServer);
+      this.contents = [...this.contents];
+    });
+  }
+
+
 
   searchByTitle() {
     const matchingBook = this.contents.find(book => book.title.toLowerCase() === this.searchTitle.toLowerCase());
