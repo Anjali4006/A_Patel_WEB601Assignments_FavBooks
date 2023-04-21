@@ -1,10 +1,16 @@
-<div [id]="book.id" [ngClass]="['card', class]" appHoverAffect="border">
+<mat-card [id]="book.id" [ngClass]="['card', class]" appHoverAffect="border">
+  <mat-card-header [matTooltip]="book.title" [matTooltipPosition]="'above'">
+    <div class="card-img">
+    </div>
+  </mat-card-header>
 
-
-  <div class="card-body">
+  <mat-card-content class="card-body">
     <h2>{{book.title}}</h2>
     <p>{{book.description}}</p>
     <p><strong>Creator:</strong> {{book.creator}}</p>
+  </mat-card-content>
+
+  <mat-card-footer>
     <p *ngIf="book.type" appHoverAffect="underline"><strong>Type:</strong> {{book.type}}</p>
     <p *ngIf="book.tags">
       <strong>Tags:</strong>
@@ -12,5 +18,5 @@
         {{tag}},
       </span>
     </p>
-  </div>
-</div>
+  </mat-card-footer>
+</mat-card>

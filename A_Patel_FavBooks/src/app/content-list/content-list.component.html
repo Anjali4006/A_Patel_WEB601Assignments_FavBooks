@@ -236,17 +236,19 @@
 
   <section class="searchForTitle">
     <div>
-      <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
-      <button (click)="searchByTitle()">Search</button>
+      <mat-form-field>
+        <mat-label>Search For Books Here</mat-label>
+        <input matInput type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+      </mat-form-field> <br>
+      <button mat-raised-button color="primary" (click)="searchByTitle()">Go <mat-icon>search</mat-icon></button>
     </div>
 
     <div *ngIf="titleFound !== null">
       <p [style.color]="titleFound ? 'green' : 'crimson'">
-        {{titleFound ? 'Book found' : 'Book not found'}}
+        {{titleFound ? 'Book is here!!' : 'Book not found'}}
       </p>
     </div>
   </section>
-
 
   <h1>Books with no type</h1>
   <section class="cards">

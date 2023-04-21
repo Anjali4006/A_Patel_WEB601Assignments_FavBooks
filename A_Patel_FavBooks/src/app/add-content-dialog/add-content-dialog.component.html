@@ -1,0 +1,57 @@
+<div>
+  <h1 mat-dialog-title>Add New Book</h1>
+  <mat-dialog-content>
+
+    <form class="newBookForm" (submit)="addNewBook()">
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="id">ID</mat-label>
+          <input matInput type="text" id="id" name="id" disabled>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="title">Title</mat-label>
+          <input matInput type="text" id="title" name="title" [(ngModel)]="newBook.title" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label for="desc">Description</mat-label>
+          <textarea matInput name="description" id="desc" cols="25" rows="5" [(ngModel)]="newBook.description" required></textarea>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label for="creator">Creator</mat-label>
+          <input matInput type="text" id="creator" name="creator" [(ngModel)]="newBook.creator" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label for="type">Type</mat-label>
+          <input matInput type="text" id="type" name="type" [(ngModel)]="newBook.type">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label for="img">Image</mat-label>
+          <input matInput type="text" id="img" name="img" [(ngModel)]="newBook.imgURL">
+        </mat-form-field>
+      </div>
+
+      <div class="addBtn">
+        <mat-dialog-actions>
+          <button mat-raised-button mat-dialog-close color="accent">Close It <mat-icon>close</mat-icon></button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="newBook" type="submit">Add Book <mat-icon>add book</mat-icon></button>
+        </mat-dialog-actions>
+      </div>
+    </form>
+  </mat-dialog-content>
+</div>

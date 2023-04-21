@@ -33,7 +33,7 @@ export class ContentListComponent {
 
   searchByTitle() {
     const matchingBook = this.contents.find(book => book.title.toLowerCase() === this.searchTitle.toLowerCase());
-    const cardElements = document.querySelectorAll(`div.card`);
+    const cardElements = document.querySelectorAll(`.card`);
 
     if (matchingBook) {
       this.titleFound = true;
